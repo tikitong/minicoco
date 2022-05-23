@@ -26,7 +26,7 @@ pip install joblib
 
 Customize your subset:
 
- - [line 74](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L74): specify the list of category names of interest in the set of dataset classes. By default: `["car", "airplane", "person"]`
+ - [line 74](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L74): specify the list of category names of interest in the set of dataset classes. default: `["car", "airplane", "person"]`
  
 - [line 96](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L96): Choose the number of images for the training and validation set. default 30-10
 
