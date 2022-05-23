@@ -12,8 +12,7 @@ data/
 
 ## First time setup
 
-The following steps are required in order to run the script:
-with conda and pip for example:
+The following steps are required in order to run the script, with conda and pip for example:
 ```
 conda create -n myenv python=3.9
 conda activate myenv
@@ -21,7 +20,7 @@ pip install pycocotools
 pip install wget==3.0
 pip install joblib
 ```
-## three changes to launch 
+## Three changes to launch 
 
 - [line 71](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L71): download the annotations of [the 2017](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) COCO dataset. Other annotation files can be found [here](https://cocodataset.org/#download). 
 
