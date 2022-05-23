@@ -22,12 +22,12 @@ pip install joblib
 ```
 ## Three changes to launch 
 
-- [line 71](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L71): download the annotations of [the 2017](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) COCO dataset. Other annotation files can be found [here](https://cocodataset.org/#download). 
+- [line 71](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L53): download the annotations of [the 2017](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) COCO dataset. Other annotation files can be found [here](https://cocodataset.org/#download). 
 
 Customize your subset:
 
- - [line 74](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L74): specify the list of category names of interest in the set of dataset classes. default: `["car", "airplane", "person"]`
+ - [line 74](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L56): specify the list of category names of interest in the set of dataset classes. default: `["car", "airplane", "person"]`
  
-- [line 96](https://github.com/tikitong/minicoco/blob/e00ceccc8121a8885b5ccb6b9ecde54491e1aa74/script.py#L96): Choose the number of images for the training and validation set. default 30-10
+- [line 96](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L78): Choose the number of images for the training and validation set. default 30-10
 
 run `python script.py`
