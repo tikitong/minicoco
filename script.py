@@ -1,3 +1,5 @@
+# in case of use, please quote https://github.com/tikitong/minicoco repo and https://stackoverflow.com/a/73249837/14864907 solution. 
+
 import os
 import json
 import argparse

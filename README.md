@@ -1,6 +1,6 @@
 ﻿## minicoco
 
-This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) for creating a subset of the 2017 [coco dataset](https://cocodataset.org/#home). With the choice of categories and number of images. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and help from [MMM](https://stackoverflow.com/a/73249837/14864907) answering for the small download method.
+This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) for creating a subset of the 2017 [coco dataset](https://cocodataset.org/#home). With the choice of categories and number of images. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and help from [MMM](https://stackoverflow.com/a/73249837/14864907) answering concerning the small download method.
 
  Its execution creates the following directory tree:
 ```
@@ -38,5 +38,4 @@ optional arguments:
   -cat NARGS [NARGS ...], --nargs NARGS [NARGS ...]
                         category names.
 ```
-### Exemple
 `python script.py annotations/instances_train2017.json -t 30 -v 10 -cat car airplane person`
