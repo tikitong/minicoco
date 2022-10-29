@@ -1,6 +1,7 @@
 ﻿## minicoco
 
-This [script.py](https://github.com/tikitong/minicoco/blob/main/script.py) presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) for creating a subset of the 2017 [coco dataset](https://cocodataset.org/#home). With the choice of classes, annotation file and number of images. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb). 
+This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) for creating a subset of the 2017 [coco dataset](https://cocodataset.org/#home). With the choice of categories and number of images. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and help from [MMM](https://stackoverflow.com/a/73249837/14864907) answering for the small download method.
+
  Its execution creates the following directory tree:
 ```
 data/
@@ -10,24 +11,32 @@ data/
 ```
 
 
-## First time setup
+## Installation
 
 The following steps are required in order to run the script, with conda and pip for example:
 ```
-conda create -n myenv python=3.9
-conda activate myenv
-pip install pycocotools
-pip install wget==3.0
-pip install joblib
+conda create -n minicoco python=3.9
+conda activate minicoco
+wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+unzip ./annotations_trainval2017.zip
+pip install -r requirements.txt
 ```
-## Three changes to launch 
+## Usage
 
-- [line 53](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L53): download the annotations of [the 2017](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) COCO dataset. Other annotation files can be found [here](https://cocodataset.org/#download). 
+```
+usage: script.py [-h] [-t TRAINNING] [-v VALIDATION] [-cat NARGS [NARGS ...]] annotation_file
 
-Customize your subset:
+positional arguments:
+  annotation_file       annotations/instances_train2017.json path file.
 
- - [line 56](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L56): specify the list of category names of interest in the set of dataset classes. default: `["car", "airplane", "person"]`
- 
-- [line 78](https://github.com/tikitong/minicoco/blob/7d43b9b2847fe021fe46d9c560c348c801c552ca/script.py#L78): Choose the number of images for the training and validation set. default 30-10
-
-run `python script.py`
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TRAINNING, --trainning TRAINNING
+                        number of images in the trainning set.
+  -v VALIDATION, --validation VALIDATION
+                        number of images in the validation set.
+  -cat NARGS [NARGS ...], --nargs NARGS [NARGS ...]
+                        category names.
+```
+### Exemple
+`python script.py annotations/instances_train2017.json -t 30 -v 10 -cat car airplane person`
