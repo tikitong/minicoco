@@ -1,6 +1,6 @@
 ﻿## minicoco
 
-This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) to create a subset of the 2017 [coco](https://cocodataset.org/#home) dataset. It allows the generation of training and validation datasets. With a single *images* folder containing the images and a *labels* folder containing the image annotations for both datasets in COCO (JSON) format. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and this [stackoverflow.](https://stackoverflow.com/a/73249837/14864907) solution. 
+This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) to create a subset of the 2017 [coco](https://cocodataset.org/#home) dataset. It allows the generation of training and validation datasets. With a single *images* folder containing the images and a *labels* folder containing the image annotations for both datasets in COCO (JSON) format. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and this [stackoverflow](https://stackoverflow.com/a/73249837/14864907) solution. 
 
 Its execution creates the following directory tree:
 ```
