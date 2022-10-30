@@ -18,8 +18,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("annotation_file", type=str,
                     help="annotations/instances_train2017.json path file.")
 
-parser.add_argument("-t", "--trainning", type=int,
-                    help="number of images in the trainning set.")
+parser.add_argument("-t", "--training", type=int,
+                    help="number of images in the training set.")
 
 parser.add_argument("-v", "--validation", type=int,
                     help="number of images in the validation set.")
@@ -101,11 +101,11 @@ def downloadImages(img: list, title: str) -> None:
             bar()
 
 
-imagetrain, imageval = myImages(imgShuffled, args.trainning, args.validation)
+imagetrain, imageval = myImages(imgShuffled, args.training, args.validation)
 
 trainset = cocoJson(imagetrain)
 createJson(trainset, train=True)
-downloadImages(imagetrain, title='Downloading images of the trainning set:')
+downloadImages(imagetrain, title='Downloading images of the training set:')
 
 valset = cocoJson(imageval)
 createJson(valset, train=False)
