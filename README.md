@@ -1,6 +1,6 @@
 ﻿## minicoco
 
-This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) to create a subset of the 2017 [coco](https://cocodataset.org/#home) dataset. It allows the generation of training and validation datasets. With a single *images* folder containing the images and a *labels* folder containing the image annotations for both datasets in COCO (JSON) format. It is inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and this [stackoverflow](https://stackoverflow.com/a/73249837/14864907) solution. 
+This script presents a quick alternative to [FiftyOne](https://voxel51.com/docs/fiftyone/#fiftyone-library) to create a subset of the 2017 [coco](https://cocodataset.org/#home) dataset. It allows the generation of training and validation datasets. With a single *images* folder containing the images and a *labels* folder containing the image annotations for both datasets in COCO (JSON) format. It is main inspired by the notebook [pycocoDemo](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb) and this [stackoverflow](https://stackoverflow.com/a/73249837/14864907) solution for the download method. 
 
 Its execution creates the following directory tree:
 ```
@@ -12,7 +12,7 @@ data/
 
 
 ### Installation
-
+The use of [conda](https://docs.conda.io/en/latest/miniconda.html) is recommended. 
 The following steps are required in order to run the script:
 ```
 conda create -n minicoco python=3.9
@@ -40,4 +40,17 @@ optional arguments:
   -cat NARGS [NARGS ...], --nargs NARGS [NARGS ...]
                         category names.
 ```
-run `python script.py annotations/instances_train2017.json -t 30 -v 10 -cat car airplane person` 🚀
+The 80 categories that can be used with the `-cat` argument are the following: 
+```
+person bicycle car motorcycle airplane bus train truck boat traffic light fire hydrant stop sign parking meter bench bird cat dog horse sheep cow elephant bear zebra giraffe backpack umbrella handbag tie suitcase frisbee skis snowboard sports ball kite baseball bat baseball glove skateboard surfboard tennis racket bottle wine glass cup fork knife spoon bowl banana apple sandwich orange broccoli carrot hot dog pizza donut cake chair couch potted plant bed dining table toilet tv laptop mouse remote keyboard cell phone microwave oven toaster sink refrigerator book clock vase scissors teddy bear hair drier toothbrush
+```
+
+>```python
+>#from https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb
+>from pycocotools.coco import COCO
+>coco=COCO("annotations/instances_train2017.json")
+>cats = coco.loadCats(coco.getCatIds())
+>nms=[cat['name'] for cat in cats]
+>print('COCO categories: \n{}\n'.format(' '.join(nms)))```
+
+You can run for example: `python script.py annotations/instances_train2017.json -t 30 -v 10 -cat car airplane person`. 
