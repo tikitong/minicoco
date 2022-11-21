@@ -44,13 +44,18 @@ The 80 categories that can be used with the `-cat` argument are the following:
 ```
 person bicycle car motorcycle airplane bus train truck boat traffic light fire hydrant stop sign parking meter bench bird cat dog horse sheep cow elephant bear zebra giraffe backpack umbrella handbag tie suitcase frisbee skis snowboard sports ball kite baseball bat baseball glove skateboard surfboard tennis racket bottle wine glass cup fork knife spoon bowl banana apple sandwich orange broccoli carrot hot dog pizza donut cake chair couch potted plant bed dining table toilet tv laptop mouse remote keyboard cell phone microwave oven toaster sink refrigerator book clock vase scissors teddy bear hair drier toothbrush
 ```
+<details>
+<summary>code</summary>
 
->```python
->#from https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb
->from pycocotools.coco import COCO
->coco=COCO("annotations/instances_train2017.json")
->cats = coco.loadCats(coco.getCatIds())
->nms=[cat['name'] for cat in cats]
->print('COCO categories: \n{}\n'.format(' '.join(nms)))```
+```python
+#from https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocoDemo.ipynb
+from pycocotools.coco import COCO
+coco = COCO("annotations/instances_train2017.json")
+cats = coco.loadCats(coco.getCatIds())
+nms = [cat['name'] for cat in cats]
+print('COCO categories: \n{}\n'.format(' '.join(nms)))
+``` 
+
+</details>
 
 You can run for example: `python script.py annotations/instances_train2017.json -t 30 -v 10 -cat car airplane person`. 
